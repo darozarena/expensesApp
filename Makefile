@@ -1,5 +1,4 @@
 .DEFAULT_GOAL := check
-.PHONY:docs migrations
 
 init:
 	@echo "Initialising the project"
@@ -28,18 +27,6 @@ clean_all:
 build:
 	@echo "👩‍🏭 Building..."
 	@npm run build
-
-migrations:
-	@./.scripts/migrate.sh
-
-migrations-down:
-	@./.scripts/migrate.sh down
-
-migrations-new:
-	@./.scripts/migrate.sh new
-
-migrations-status:
-	@./.scripts/migrate.sh status
 
 deploy-production:
 	@echo "👆📦 Deploying to PRODUCTION ⚠️..."
