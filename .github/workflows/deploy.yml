@@ -1,0 +1,42 @@
+name: deploy-production
+on:
+  push:
+    branches:
+      - 'main'
+concurrency: deploy_production
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    services:
+      mongodb:
+        image: mongo:4.4.6
+        ports:
+          - 27017:27017
+    steps:
+      - uses: actions/checkout@v2
+      - name: Config node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.13.1'
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Authorize Github npm registry
+        run: echo -e "\n//npm.pkg.github.com/:_authToken=$GH_ACCESS_TOKEN" >> .npmrc
+        env:
+          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+      - name: Initialize project
+        run: make init
+      - name: Login to Heroku Container registry
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku container:login
+      - name: Deploy
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          NPM_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+        run: make deploy-production
