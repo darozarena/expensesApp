@@ -12,7 +12,7 @@ echo "Login to Heroku Container registry"
 heroku container:login
 
 echo "Heroku containers push 👆📦"
-heroku container:push --arg NPM_TOKEN="${NPM_TOKEN}" -a $HEROKU_ENVIRONMENT
+heroku container:push web --arg NPM_TOKEN="${NPM_TOKEN}" -a $HEROKU_ENVIRONMENT
 
 echo "Release images"
 heroku container:release web -a $HEROKU_ENVIRONMENT
