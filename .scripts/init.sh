@@ -2,6 +2,6 @@
 
 set -eu
 
-node .scripts/check_node_version.js
-
 npm i
+
+node .scripts/check_node_version.js
