@@ -1,0 +1,12 @@
+Makefile
+nodemon*
+dist
+.scripts
+.cache
+.DS_Store
+.dockerignore
+.editorconfig
+.git
+.gitignore
+node_modules
+.env*

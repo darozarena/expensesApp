@@ -1,0 +1,21 @@
+{
+  "extends": "@cowcoders/eslint-config/ts",
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.ts"
+      ],
+      "rules": {
+        "quotes": "off",
+        "indent": "off",
+        "comma-dangle": "off",
+        "key-spacing": "off",
+        "import/no-anonymous-default-export": "off",
+        "sort-keys": "error"
+      }
+    }
+  ],
+  "rules": {
+    "no-buffer-constructor": "error"
+  }
+}
