@@ -19,6 +19,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.13.1'
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: Authorize Github npm registry
         run: echo -e "\n//npm.pkg.github.com/:_authToken=$GH_ACCESS_TOKEN" >> .npmrc
         env:
