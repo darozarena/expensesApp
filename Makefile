@@ -40,3 +40,7 @@ migrations-new:
 
 migrations-status:
 	@./.scripts/migrate.sh status
+
+deploy-production:
+	@echo "👆📦 Deploying to PRODUCTION ⚠️..."
+	@./.scripts/deploy-production-architecture.sh
