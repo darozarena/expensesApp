@@ -35,6 +35,9 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: heroku login --interactive
+        with:
+          email: darozarena@gmail.com
+          password: ${{ secrets.HEROKU_PASSWORD }}
       - name: Login to Heroku Container registry
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
