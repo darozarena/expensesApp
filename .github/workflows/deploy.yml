@@ -29,18 +29,14 @@ jobs:
         run: echo -e "\n//npm.pkg.github.com/:_authToken=$GH_ACCESS_TOKEN" >> .npmrc
         env:
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
-      - name: Echo
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: echo $HEROKU_API_KEY
-      - name: Initialize project
-        run: make init
+      # - name: Initialize project
+      #   run: make init
       - name: Login to Heroku Container registry
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: heroku container:login
-      - name: Deploy
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          NPM_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
-        run: make deploy-production
+      # - name: Deploy
+      #   env:
+      #     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      #     NPM_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+      #   run: make deploy-production
