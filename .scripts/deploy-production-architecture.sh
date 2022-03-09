@@ -2,7 +2,7 @@
 
 set -eu
 
-HEROKU_ENVIRONMENT=expenses-app-production
+HEROKU_ENVIRONMENT=expenses-app-pmp
 
 echo "🏗  Building architecture..."
 echo "building dockers 🐳"
