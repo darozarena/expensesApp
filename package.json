@@ -11,7 +11,7 @@
     "dev-build": "ts-node src/app.ts",
     "lint": "eslint --max-warnings 0 . --ext .ts",
     "start": "tsc && node dist/app.js",
-    "start:prod": "node dist/src/app.js",
+    "start:prod": "node dist/app.js",
     "type-check": "tsc --pretty --noEmit"
   },
   "keywords": [],
