@@ -41,6 +41,8 @@ export class MongoDBConnection {
       useUnifiedTopology: true,
     };
 
+    console.log({ MONGOURI: Config.database.mongoURI });
+
     MongoClient.connect(Config.database.mongoURI, options, (err, client) => {
       if (err) {
         console.error(err);
