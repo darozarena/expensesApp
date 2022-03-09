@@ -4,11 +4,6 @@ set -eu
 
 HEROKU_ENVIRONMENT=expenses-app-production
 
-. "${PWD}"/.scripts/utils
-
-assert_not_uncommitted_changes
-assert_main_branch
-
 echo "🏗  Building architecture..."
 echo "building dockers 🐳"
 docker build -t zzm-backend-server --build-arg NPM_TOKEN="${NPM_TOKEN}" -f Dockerfile.web .
