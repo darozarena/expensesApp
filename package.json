@@ -47,7 +47,6 @@
     "@typescript-eslint/parser": "5.9.1",
     "editorconfig-checker": "4.0.2",
     "eslint": "8.6.0",
-    "migrate-mongo": "8.2.2",
     "nodemon": "2.0.15",
     "semver": "7.3.5",
     "shx": "0.3.4",
