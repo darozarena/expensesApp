@@ -4,7 +4,7 @@ import { normalizeEmail } from '../utils/stringHelper';
 import { BasicCategory } from '../models/BasicCategory';
 import { toIdentifier } from '../integrations/db/utils';
 
-export interface CategoryDTO {
+export class CategoryDTO {
   _id: IdentifierDTO;
   name: string;
   email: string;

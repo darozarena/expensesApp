@@ -15,7 +15,7 @@ export class CategoriesController implements interfaces.Controller {
     @inject(TYPES.CategoriesService) private categoriesService: CategoriesService
     ){}
 
-    @httpGet('/')
+    @httpGet('/:email')
     public async getAll(
       @requestParam('email') email: string,
       @response() res: express.Response

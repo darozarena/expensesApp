@@ -15,7 +15,7 @@ export class ExpensesController implements interfaces.Controller {
     @inject(TYPES.ExpensesService) private expensesService: ExpensesService
     ){}
 
-    @httpGet('/')
+    @httpGet('/:email')
     public async getAll(
       @requestParam('email') email: string,
       @response() res: express.Response

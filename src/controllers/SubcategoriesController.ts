@@ -15,7 +15,7 @@ export class SubcategoriesController implements interfaces.Controller {
     @inject(TYPES.SubcategoriesService) private subcategoriesService: SubcategoriesService
   ){}
 
-    @httpGet('/')
+    @httpGet('/:email')
     public async getAll(
       @requestParam('email') email: string,
       @response() res: express.Response

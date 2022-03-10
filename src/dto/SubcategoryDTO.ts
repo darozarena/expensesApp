@@ -4,7 +4,7 @@ import { toIdentifier } from '../integrations/db/utils';
 import { normalizeEmail } from '../utils/stringHelper';
 import { BasicSubcategory } from '../models/BasicSubcategory';
 
-export interface SubcategoryDTO {
+export class SubcategoryDTO {
   _id: IdentifierDTO;
   name: string;
   categoryId: IdentifierDTO;
